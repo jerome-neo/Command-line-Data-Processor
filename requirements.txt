@@ -1,0 +1,7 @@
+urllib3~=2.0.6
+boto3~=1.28.63
+prompt_toolkit
+pandas~=2.1.1
+fastparquet
+openpyxl
+botocore~=1.31.63

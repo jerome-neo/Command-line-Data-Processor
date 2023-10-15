@@ -1,0 +1,10 @@
+# Ignore Python byte code files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore .idea directory
+.idea/
+
+# Ignore example_data file
+example_data
