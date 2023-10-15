@@ -7,4 +7,4 @@ __pycache__/
 .idea/
 
 # Ignore example_data file
-example_data
+example_data/*
