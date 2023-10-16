@@ -38,6 +38,7 @@ def is_public_s3_bucket(bucket_name) -> bool:
         return False
     return True
 
+
 def verify_config() -> None:
     import os
     aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")

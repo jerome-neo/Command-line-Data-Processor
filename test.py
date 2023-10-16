@@ -4,6 +4,7 @@ from common import Common
 
 bucket = "myawsbucket-jerome"  # change me
 
+
 class CommonTest(unittest.TestCase):
 
     def test_aws_config(self):
@@ -149,4 +150,3 @@ class CommonTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
