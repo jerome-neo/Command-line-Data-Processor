@@ -18,6 +18,7 @@ from service.s3_service import is_public_s3_bucket, upload_to_s3
 from validator.output_validator import OutputValidator
 from .constants import *
 
+
 class Common:
     def __init__(self):
         self.input = ""
@@ -32,7 +33,7 @@ class Common:
         try:
             print_formatted_text(HTML(READ_LOCALLY_QUESTION))
             while True:
-                read = pt.prompt("Yes [Y] / No [N]: ")
+                read = pt.prompt(YES_NO_PROMPT)
                 if read.lower().strip() not in OPTIONS:
                     print(INVALID_INPUT_MESSAGE)
                     continue
@@ -89,20 +90,20 @@ class Common:
         return input_source
 
     def get_output_format(self) -> None:
-        print_formatted_text(HTML("<b>Output Format:</b>"))
+        print_formatted_text(HTML(OUTPUT_FORMAT_QUESTION))
         while True:
-            output_format = pt.prompt("Enter the output format (csv, parquet, xlsx): ",
+            output_format = pt.prompt(OUTPUT_FORMAT_INPUT,
                                       validator=OutputValidator()).strip()
             if output_format.lower() in OUTPUT_FORMAT:
                 if output_format.lower() == "xlsx":
                     print_formatted_text(HTML(OUTPUT_FORMAT_WARNING))
                 break
             else:
-                print_formatted_text(HTML('<ansired><b>Format not supported. Please try again.</b></ansired>'))
+                print_formatted_text(HTML(UNSUPPORTED_FORMAT_MESSAGE))
         self.out_format = output_format.lower()
 
     def set_export_compression(self) -> None:
-        print_formatted_text(HTML(OUTPUT_FORMAT_QUESTION))
+        print_formatted_text(HTML(OUTPUT_COMPRESSION_FORMAT_QUESTION))
         compress = False
         while True:
             should_compress = pt.prompt(YES_NO_PROMPT, validator=OutputValidator()).strip()
@@ -188,7 +189,7 @@ class Common:
             self.data = result_df
 
     def clean(self) -> None:
-        print("Cleaning in progress.")
+        print(CLEANING_MESSAGE)
         df = self.data
         # Remove non letters and symbols
         # Keeping only letters including accented ones and numbers

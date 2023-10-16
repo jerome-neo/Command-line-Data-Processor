@@ -27,13 +27,18 @@ INPUT_LOCATION_INPUT = "Enter the input source, /path/to/your/file: "
 INPUT_API_INPUT = "Enter the input API: "
 
 # GET OUTPUT FORMAT
-OUTPUT_FORMAT_QUESTION = "<b>Compression settings:</b>"
+OUTPUT_FORMAT_QUESTION = "<b>Output Format:</b>"
+OUTPUT_FORMAT_INPUT = "Enter the output format (csv, parquet, xlsx): "
+
+# GET OUTPUT COMPRESSION FORMAT
+OUTPUT_COMPRESSION_FORMAT_QUESTION = "<b>Compression settings:</b>"
 OUTPUT_FORMAT_WARNING = ("<ansired>Warning: Exporting to excel is not supported for large file " +
                          "sizes.</ansired>")
 COMPRESSION_FORMAT_PROMPT = "Format for compression (gz, bz2, xz): "
 
 # OTHERS
 LOADING_MESSAGE = "<b><ansigreen>Loading data.</ansigreen></b>"
+CLEANING_MESSAGE = "Cleaning in progress."
 FETCH_API_MESSAGE = "<b><ansigreen>Fetching from API.</ansigreen></b>"
 LOAD_SUCCESSFUL_MESSAGE = "<b><ansigreen>File loaded successfully.</ansigreen></b>"
 EXPORTING_MESSAGE = "Exporting."
