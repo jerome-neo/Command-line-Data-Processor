@@ -122,24 +122,24 @@ You don't need to worry about extra spaces in your responses. The application wi
 
 ### 4.Providing paths
 When prompted for path, **do not** use quotations. Instead, just input the absolute path.
-```angular2html
+```
   /path/to/file
 ```
 
 ### 5. Providing API endpoints
 When prompted for API endpoint, you may test with
-```angular2html
+```
     http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
 ```
 
 ### 6. Providing Bucket Name
 When prompted, please input the name of your public S3 Bucket.
-```angular2html
+```
     myawsbucket-example
 ```
 If you encounter any errors, check that your S3 bucket policies have been configured as such
-```angular2html
-    {
+```
+{
     "Version": "2012-10-17",
     "Statement": [
         {
